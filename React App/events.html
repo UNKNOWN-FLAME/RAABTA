@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAABTA 2026 - River of Events</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;900&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <link rel="stylesheet" href="./events.css"> 
+</head>
+<body>
+
+    <header class="lit_navnew">
+        <div class="litnav_logo_link">
+            <div class="litnav_logo">
+                <div class="lit_logo"><img src="assets/LiteratiLogo.svg" alt="RAABTA Logo"></div>
+                <div class="litnav_logocontent">RAABTA 2026</div>
+            </div>
+        </div>
+        <nav class="litnav_content">
+            <a href="index.html" class="litnav_container">Schedule</a>
+            <a href="events.html" class="litnav_container active">Events</a>
+            <a href="sponsors.html" class="litnav_container">Sponsors</a>
+        </nav>
+    </header>
+
+    <div class="main-content-spacer"></div>
+
+    <main class="river-container">
+        <svg class="river-svg" viewBox="0 0 400 2000" preserveAspectRatio="none">
+            <path id="river-path" d="M200,0 Q350,300 100,600 Q-50,900 200,1200 Q450,1500 200,1800" 
+                  fill="none" stroke="#68a4b4" stroke-width="60" stroke-linecap="round"/>
+            <text fill="#fff" font-size="20" font-family="Arial">
+                <textPath href="#river-path" startOffset="10%">🐟</textPath>
+                <textPath href="#river-path" startOffset="30%">🐟</textPath>
+                <textPath href="#river-path" startOffset="60%">🐟</textPath>
+            </text>
+        </svg>
+
+        <section class="river-event left fade-in">
+            <div class="event-icon"><img src="media/Day-1/Ibtida.jpeg" alt="Ibtida"></div>
+            <div class="event-details">
+                <h2>MAIN STAGE</h2>
+                <p>Where the magic of RAABTA begins with Ibtida.</p>
+            </div>
+        </section>
+
+        <section class="river-event right fade-in">
+            <div class="event-icon"><img src="media/Day-1/Ghazal Night.jpeg" alt="Ghazal"></div>
+            <div class="event-details">
+                <h2>GHAZAL NIGHT</h2>
+                <p>A serene evening of poetry and classical melodies.</p>
+            </div>
+        </section>
+
+        <section class="river-event left fade-in">
+            <div class="event-icon"><img src="media/Day-1/Bass Warfare.jpeg" alt="Bass"></div>
+            <div class="event-details">
+                <h2>BASS WARFARE</h2>
+                <p>High-energy battles along the banks of the river.</p>
+            </div>
+        </section>
+
+        <section class="river-event right fade-in">
+            <div class="event-icon"><img src="media/Day-1/Grand Masquerade.jpeg" alt="Masquerade"></div>
+            <div class="event-details">
+                <h2>GRAND FINALE</h2>
+                <p>Closing the festival with the Grand Masquerade.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <div class="copyright">©RAABTA’26, IIT Delhi</div>
+    </footer>
+
+    <script>
+        // Scroll Animation Logic
+        const faders = document.querySelectorAll('.fade-in');
+        
+        const appearOptions = {
+            threshold: 0.3,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('appear');
+                appearOnScroll.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    </script>
+</body>
+</html>

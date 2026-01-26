@@ -1,0 +1,107 @@
+/* --- River of Events Styling --- */
+
+.river-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff0bf;
+    padding: 100px 0;
+    min-height: 2000px;
+    overflow: hidden;
+}
+
+/* The River SVG Path */
+.river-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    filter: drop-shadow(0 0 10px rgba(104, 164, 180, 0.4));
+}
+
+#river-path {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    animation: flowRiver 4s forwards ease-in-out;
+}
+
+@keyframes flowRiver {
+    to { stroke-dashoffset: 0; }
+}
+
+/* Event Markers */
+.river-event {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin-bottom: 250px; /* Spacing along the river */
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.river-event.left {
+    flex-direction: row;
+    margin-left: 5%;
+    transform: translateX(-50px);
+}
+
+.river-event.right {
+    flex-direction: row-reverse;
+    margin-left: 15%;
+    transform: translateX(50px);
+}
+
+/* Scroll Trigger State */
+.river-event.appear {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Icon & Details styling */
+.event-icon {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #8b2621;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    background: white;
+}
+
+.event-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-details {
+    padding: 0 30px;
+    flex: 1;
+}
+
+.event-details h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.8rem;
+    color: #37383c;
+    margin: 0;
+}
+
+.event-details p {
+    font-family: 'Poppins', sans-serif;
+    color: #666;
+}
+
+/* Decorative Madhubani Borders on details */
+.event-details h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #8b2621;
+    margin-top: 5px;
+}

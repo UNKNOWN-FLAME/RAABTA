@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAABTA 2026 - Events</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./main-event.css">
+</head>
+<body>
+
+    <header class="lit_navnew">
+        <div class="litnav_logo_link">
+            <div class="litnav_logo">
+                <div class="lit_logo">
+                    <img src="assets/LiteratiLogo.svg" alt="RAABTA Logo">
+                </div>
+                <div class="litnav_logocontent">RAABTA 2026</div>
+            </div>
+        </div>
+
+        <button class="nav_hamburger" id="hamburger-btn">
+            <i class="fa-solid fa-bars" id="menu-icon"></i>
+        </button>
+
+        <nav class="litnav_content" id="nav-menu">
+            <a href="./index.html" class="litnav_container">HOME</a>
+            <a href="./main-event.html" class="litnav_container active">EVENTS</a>
+            <a href="./sponsors.html" class="litnav_container">SPONSORS</a>
+            <a href="" class="litnav_container">TEAM</a>
+        </nav>
+    </header>
+
+    <div class="main-content-spacer"></div>
+
+    <div class="toggle-container">
+        <button onclick="showDay(1)" id="btn-day1" class="day-btn">Day 1</button>
+        <button onclick="showDay(2)" id="btn-day2" class="day-btn">Day 2</button>
+    </div>
+
+    <main class="carousel-section">
+        <button class="arrow left" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="carousel-container" id="event-carousel"></div>
+        <button class="arrow right" onclick="moveSlide(1)">&#10095;</button>
+    </main>
+
+    <footer id="footer">
+        <div class="footer-row">
+            <div class="footer-col logo-col">
+                <div class="footer-logo-box">
+                    <img src="assets/lit-logo.png" alt="RAABTA" class="footer-logo-img">
+                    <h2><b>RAABTA 2026</b></h2>
+                </div>
+            </div>
+            <div class="footer-col menu-col">
+                <ul class="menu">
+                    <li><a href="./index.html">HOME</a></li>
+                    <li><a href="./main-event.html">EVENTS</a></li>
+                    <li><a href="./sponsors.html">SPONSORS</a></li>
+                    <li><a href="">TEAM</a></li>
+                </ul>
+            </div>
+            <div class="footer-col follow-col">
+                <h5>Follow Us On Instagram</h5>
+                <p><a href="" target="_blank"><i class="fa-brands fa-instagram"></i> @raabta.nsut</a></p>
+                <h5>For any queries contact us at :</h5>
+                <p><a href=""><i class="fa-solid fa-envelope"></i> raabta@college.edu</a></p>
+            </div>
+            <div class="footer-col org-col">
+                <img src="assets/bsp-logo-new.png" alt="BSP Logo" class="org-logo">
+                <h5><b>Organized by: BSP</b></h5>
+            </div>
+        </div>
+        <div class="copyright">©RAABTA, NSUT Delhi</div>
+    </footer>
+
+    <script src="./main-event.js"></script>
+</body>
+</html>

@@ -1,0 +1,339 @@
+/* --- Global Styles --- */
+:root {
+    --bg-color: #fff0bf;
+    --text-dark: #37383c;
+    --madhubani-red: #8b2621;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
+
+/* --- Hero & Arch Section (Non-Fixed Header) --- */
+.hero-section {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: var(--bg-color);
+    margin-top: -150px;
+}
+
+.hero-arch-container {
+    width: 100%;
+    position: relative;
+    max-width: 100vw;
+    overflow: hidden;
+}
+
+/* Arch SVG - Full width at top */
+.madhubani-header-art {
+    width: 100%;
+    overflow: hidden;
+}
+
+.arch-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+}
+
+/* Navigation at bottom of arch */
+.hero-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 20px 0;
+    font-family: "Crimson Pro", serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    background-color: var(--bg-color);
+}
+
+.hero-nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: color 0.3s ease, transform 0.2s ease;
+    letter-spacing: 1px;
+}
+
+.hero-nav a:hover,
+.hero-nav a.active {
+    color: var(--madhubani-red);
+    transform: scale(1.05);
+}
+
+/* Remove spacer - no longer needed */
+.header-spacer {
+    display: none;
+}
+
+/* Main illustration - Full width panoramic */
+.hero-illustration-wide {
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    margin-top: -100px;
+}
+
+.main-illustration-panoramic {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* --- Content Sections --- */
+.about-section, .gallery-section {
+    padding: 80px 10%;
+    position: relative;
+    text-align: center;
+    max-width: 100vw;
+    overflow: hidden;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.section-title h1 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.title-motif {
+    width: 40px;
+    height: auto;
+}
+
+.content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+/* Floating Animal Icons */
+.floating-animal {
+    position: absolute;
+    z-index: 5;
+}
+
+.cheetah {
+    position: absolute;
+    right: 2%;
+    bottom: -120px;
+    width: clamp(300px, 25vw, 450px);
+    z-index: 5;
+}
+
+/* --- Elevated Fish --- */
+.fish {
+    position: absolute;
+    left: 2%;
+    bottom: 200px;
+    width: clamp(150px, 15vw, 250px);
+    z-index: 6;
+}
+
+/* --- River Footer Art - Seamless Full Width --- */
+.river-footer-art {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin-top: 50px;
+    position: relative;
+}
+
+.water-pattern {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.water-tile {
+    flex-shrink: 0;
+    height: 100%;
+    width: auto;
+}
+
+/* --- Footer Logic --- */
+#footer {
+    background-color: var(--bg-color);
+    padding: 60px 5% 20px;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+    max-width: 100vw;
+    overflow: hidden;
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.footer-logo-img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    margin: 10px 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: var(--madhubani-red);
+}
+
+.follow-col a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    margin: 10px 0;
+    transition: color 0.3s ease;
+}
+
+.follow-col a:hover {
+    color: var(--madhubani-red);
+}
+
+.org-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #e0d0a0;
+    padding-top: 20px;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Design --- */
+@media screen and (max-width: 991px) {
+    .hero-section {
+        margin-top: -100px;
+    }
+
+    .hero-illustration-wide {
+        margin-top: -60px;
+    }
+
+    .hero-nav {
+        font-size: 1.2rem;
+        gap: 30px;
+        padding: 15px 0;
+    }
+
+    .cheetah {
+        width: 200px;
+        bottom: -50px;
+    }
+
+    .fish {
+        bottom: 120px;
+        width: 120px;
+    }
+
+    .river-footer-art {
+        height: 150px;
+    }
+
+    .section-title h1 {
+        font-size: 2rem;
+    }
+
+    .content-wrapper {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .hero-section {
+        margin-top: -80px;
+    }
+
+    .hero-illustration-wide {
+        margin-top: -40px;
+    }
+
+    .hero-nav {
+        font-size: 1rem;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding: 10px 0;
+    }
+
+    .section-title h1 {
+        font-size: 1.5rem;
+    }
+
+    .title-motif {
+        width: 30px;
+    }
+
+    .about-section, .gallery-section {
+        padding: 60px 5%;
+    }
+
+    .cheetah {
+        width: 150px;
+        bottom: -30px;
+    }
+
+    .fish {
+        bottom: 100px;
+        width: 100px;
+    }
+
+    .river-footer-art {
+        height: 100px;
+    }
+}
