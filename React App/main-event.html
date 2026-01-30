@@ -7,6 +7,274 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="./main-event.css">
+
+    <style>
+        :root {
+            --bg-color: #fff0bf;
+            --text-dark: #37383c;
+            --madhubani-red: #8b2621;
+            --accent-gold: #d4af37;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* --- Improved Footer --- */
+        #footer {
+            background: linear-gradient(180deg, var(--bg-color) 0%, #f5e6a0 100%);
+            padding: 70px 5% 0;
+            box-shadow: 0 -8px 25px rgba(139, 38, 33, 0.15);
+            max-width: 100vw;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Decorative top border */
+        #footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--madhubani-red), transparent);
+        }
+
+        .footer-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-bottom: 40px;
+        }
+
+        .footer-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Logo Column */
+        .logo-col {
+            justify-content: center;
+        }
+
+        .footer-logo-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-logo-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--madhubani-red);
+            box-shadow: 0 8px 20px rgba(139, 38, 33, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .footer-logo-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(139, 38, 33, 0.4);
+        }
+
+        .footer-logo-box h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--madhubani-red);
+            margin: 0;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Menu Column */
+        .menu-col h5 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.3rem;
+            color: var(--madhubani-red);
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+            padding: 5px 10px;
+        }
+
+        .menu li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--madhubani-red);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .menu li a:hover {
+            color: var(--madhubani-red);
+            transform: translateY(-2px);
+        }
+
+        .menu li a:hover::after {
+            width: 80%;
+        }
+
+        /* Contact Column */
+        .follow-col h5 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.2rem;
+            color: var(--madhubani-red);
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .follow-col h5:first-child {
+            margin-top: 0;
+        }
+
+        .follow-col p {
+            margin: 0 0 25px 0;
+        }
+
+        .follow-col a {
+            text-decoration: none;
+            color: var(--text-dark);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .follow-col a:hover {
+            color: var(--madhubani-red);
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 38, 33, 0.2);
+        }
+
+        .follow-col i {
+            font-size: 1.2rem;
+            color: var(--madhubani-red);
+        }
+
+        /* Organization Column */
+        .org-col {
+            justify-content: center;
+        }
+
+        .org-logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .org-logo:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .org-col h5 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin: 0;
+            font-weight: 700;
+        }
+
+        /* Copyright Section */
+        .copyright {
+            text-align: center;
+            border-top: 2px solid rgba(139, 38, 33, 0.2);
+            padding: 25px 0;
+            margin-top: 40px;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #footer {
+                padding: 50px 5% 0;
+            }
+
+            .footer-row {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-logo-img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .footer-logo-box h2 {
+                font-size: 1.8rem;
+            }
+
+            .menu-col h5,
+            .follow-col h5,
+            .org-col h5 {
+                font-size: 1.1rem;
+            }
+
+            .menu li a,
+            .follow-col a {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-logo-img {
+                width: 90px;
+                height: 90px;
+            }
+
+            .footer-logo-box h2 {
+                font-size: 1.5rem;
+            }
+
+            .org-logo {
+                width: 80px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -14,9 +282,8 @@
         <div class="litnav_logo_link">
             <div class="litnav_logo">
                 <div class="lit_logo">
-                    <img src="assets/LiteratiLogo.svg" alt="RAABTA Logo">
+                    <img src="./media/raabta.png" alt="RAABTA Logo">
                 </div>
-                <div class="litnav_logocontent">RAABTA 2026</div>
             </div>
         </div>
 
@@ -28,7 +295,7 @@
             <a href="./index.html" class="litnav_container">HOME</a>
             <a href="./main-event.html" class="litnav_container active">EVENTS</a>
             <a href="./sponsors.html" class="litnav_container">SPONSORS</a>
-            <a href="" class="litnav_container">TEAM</a>
+            <a href="./teams.html" class="litnav_container">TEAM</a>
         </nav>
     </header>
 
@@ -47,32 +314,49 @@
 
     <footer id="footer">
         <div class="footer-row">
+            <!-- Logo Column -->
             <div class="footer-col logo-col">
                 <div class="footer-logo-box">
-                    <img src="assets/lit-logo.png" alt="RAABTA" class="footer-logo-img">
-                    <h2><b>RAABTA 2026</b></h2>
+                    <img src="./media/raabta.png" alt="RAABTA" class="footer-logo-img" />
+                    <h2>RAABTA 2026</h2>
                 </div>
             </div>
+
+            <!-- Menu Column -->
             <div class="footer-col menu-col">
+                <h5>Quick Links</h5>
                 <ul class="menu">
                     <li><a href="./index.html">HOME</a></li>
                     <li><a href="./main-event.html">EVENTS</a></li>
                     <li><a href="./sponsors.html">SPONSORS</a></li>
-                    <li><a href="">TEAM</a></li>
+                    <li><a href="./teams.html">TEAM</a></li>
                 </ul>
             </div>
+
+            <!-- Contact Column -->
             <div class="footer-col follow-col">
                 <h5>Follow Us On Instagram</h5>
-                <p><a href="" target="_blank"><i class="fa-brands fa-instagram"></i> @raabta.nsut</a></p>
-                <h5>For any queries contact us at :</h5>
-                <p><a href=""><i class="fa-solid fa-envelope"></i> raabta@college.edu</a></p>
+                <p>
+                    <a href="https://www.instagram.com/raabtansut?igsh=MWliYW42NWwyaDhueQ==" target="_blank">
+                        <i class="fa-brands fa-instagram"></i> @raabta.nsut
+                    </a>
+                </p>
+                <h5>For Any Queries Contact Us</h5>
+                <p>
+                    <a href="mailto:raabta@college.edu">
+                        <i class="fa-solid fa-envelope"></i> raabta@college.edu
+                    </a>
+                </p>
             </div>
+
+            <!-- Organization Column -->
             <div class="footer-col org-col">
-                <img src="assets/bsp-logo-new.png" alt="BSP Logo" class="org-logo">
-                <h5><b>Organized by: BSP</b></h5>
+                <img src="./media/nsut logo.png" alt="BSP Logo" class="org-logo" />
+                <h5>Organized by: NSUT DELHI</h5>
             </div>
         </div>
-        <div class="copyright">©RAABTA, NSUT Delhi</div>
+        
+        <div class="copyright">©2026 RAABTA, NSUT Delhi. All Rights Reserved.</div>
     </footer>
 
     <script src="./main-event.js"></script>

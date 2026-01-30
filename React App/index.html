@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -13,7 +13,277 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="style.css"> <link rel="stylesheet" href="./events.css"> 
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./events.css" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fff0bf;
+            --text-dark: #37383c;
+            --madhubani-red: #8b2621;
+            --accent-gold: #d4af37;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* --- Improved Footer --- */
+        #footer {
+            background: linear-gradient(180deg, var(--bg-color) 0%, #f5e6a0 100%);
+            padding: 70px 5% 0;
+            box-shadow: 0 -8px 25px rgba(139, 38, 33, 0.15);
+            max-width: 100vw;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Decorative top border */
+        #footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--madhubani-red), transparent);
+        }
+
+        .footer-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-bottom: 40px;
+        }
+
+        .footer-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Logo Column */
+        .logo-col {
+            justify-content: center;
+        }
+
+        .footer-logo-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-logo-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--madhubani-red);
+            box-shadow: 0 8px 20px rgba(139, 38, 33, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .footer-logo-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(139, 38, 33, 0.4);
+        }
+
+        .footer-logo-box h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--madhubani-red);
+            margin: 0;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Menu Column */
+        .menu-col h5 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.3rem;
+            color: var(--madhubani-red);
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+            padding: 5px 10px;
+        }
+
+        .menu li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--madhubani-red);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .menu li a:hover {
+            color: var(--madhubani-red);
+            transform: translateY(-2px);
+        }
+
+        .menu li a:hover::after {
+            width: 80%;
+        }
+
+        /* Contact Column */
+        .follow-col h5 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.2rem;
+            color: var(--madhubani-red);
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .follow-col h5:first-child {
+            margin-top: 0;
+        }
+
+        .follow-col p {
+            margin: 0 0 25px 0;
+        }
+
+        .follow-col a {
+            text-decoration: none;
+            color: var(--text-dark);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .follow-col a:hover {
+            color: var(--madhubani-red);
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 38, 33, 0.2);
+        }
+
+        .follow-col i {
+            font-size: 1.2rem;
+            color: var(--madhubani-red);
+        }
+
+        /* Organization Column */
+        .org-col {
+            justify-content: center;
+        }
+
+        .org-logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .org-logo:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .org-col h5 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin: 0;
+            font-weight: 700;
+        }
+
+        /* Copyright Section */
+        .copyright {
+            text-align: center;
+            border-top: 2px solid rgba(139, 38, 33, 0.2);
+            padding: 25px 0;
+            margin-top: 40px;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #footer {
+                padding: 50px 5% 0;
+            }
+
+            .footer-row {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-logo-img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .footer-logo-box h2 {
+                font-size: 1.8rem;
+            }
+
+            .menu-col h5,
+            .follow-col h5,
+            .org-col h5 {
+                font-size: 1.1rem;
+            }
+
+            .menu li a,
+            .follow-col a {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-logo-img {
+                width: 90px;
+                height: 90px;
+            }
+
+            .footer-logo-box h2 {
+                font-size: 1.5rem;
+            }
+
+            .org-logo {
+                width: 80px;
+            }
+        }
+    </style>
   </head>
   <body>
     <!-- Fixed Hero Section with Arch as Header -->
@@ -26,10 +296,10 @@
 
         <!-- Navigation below arch -->
         <nav class="hero-nav">
-          <a href="./index.html">HOME</a>
+          <a href="#">HOME</a>
           <a href="./main-event.html">EVENTS</a>
           <a href="./sponsors.html">SPONSORS</a>
-          <a href="#">TEAM</a>
+          <a href="./teams.html">TEAM</a>
         </nav>
       </div>
     </section>
@@ -53,161 +323,234 @@
         <h1>About This Event</h1>
         <img src="media/lotus.svg" alt="Lotus" class="title-motif" />
       </div>
-      <div class="content-wrapper">
+       <div class="content-wrapper">
         <p>
-          Welcome to RAABTA 2026. A journey through literature, art, and the
-          vibrant heritage of Madhubani storytelling. Join us as we explore the
-          connection between the traditional and the contemporary.
+          Raabta is a celebration of words, emotions, creativity, and expression. It brings together literature enthusiasts, poets, storytellers, speakers, and performers on a single platform to showcase talent, exchange ideas, and build meaningful connections through art and language. The fest aims to inspire young minds, promote cultural dialogue, and nurture creative excellence.
         </p>
-        <img
+        <p>
+          Organized by the Board of Student Publications (BSP), RAABTA brings together students, artists, 
+          poets, musicians, and literature enthusiasts from across the country. Join us as we explore the 
+          beautiful connection between traditional and contemporary art forms through two days of captivating 
+          performances, literary sessions, cultural events, and creative workshops.
+        </p>
+        <p>
+          Experience the magic of Sufi nights, the rhythm of Sargam, the elegance of Noor Ball, the creativity 
+          of fashion shows, and the power of poetry. RAABTA 2026 promises to be an unforgettable celebration 
+          of art, culture, and human connections.
+        </p>
+      </div>
+      <img
           src="media/cheetah.svg"
           alt="Cheetah Art"
           class="floating-animal cheetah"
         />
-      </div>
     </section>
-
-    <!-- Gallery Section -->
-    <section class="gallery-section">
-      <div class="section-title">
-        <img src="media/lotus.svg" alt="Lotus" class="title-motif" />
-        <h1>Gallery</h1>
-        <img src="media/lotus.svg" alt="Lotus" class="title-motif" />
-      </div>
-
-      <div class="gallery-container">
-        <img src="media/fish.svg" alt="Fish Art" class="floating-animal fish" />
-      </div>
-
-      <!-- Seamless River footer art - full width -->
-      <div class="river-footer-art">
-        <svg class="water-pattern" preserveAspectRatio="none" viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="waterPattern" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
-              <image href="media/water (2).svg" x="0" y="0" width="200" height="200" preserveAspectRatio="xMidYMid slice"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#waterPattern)"/>
-        </svg>
-      </div>
-    </section>
-
-
-
-
-    <div class="main-content-spacer"></div>
 
     <main class="river-container">
-        <svg class="river-svg" viewBox="0 0 400 2000" preserveAspectRatio="none">
-            <path id="river-path" d="M200,0 Q350,300 100,600 Q-50,900 200,1200 Q450,1500 200,1800" 
-                  fill="none" stroke="#68a4b4" stroke-width="60" stroke-linecap="round"/>
-            <text fill="#fff" font-size="20" font-family="Arial">
-                <textPath href="#river-path" startOffset="10%">🐟</textPath>
-                <textPath href="#river-path" startOffset="30%">🐟</textPath>
-                <textPath href="#river-path" startOffset="60%">🐟</textPath>
-            </text>
-        </svg>
+    <svg class="river-svg" viewBox="0 0 400 3200" preserveAspectRatio="none">
+    <defs>
+        <pattern id="river-pattern" patternUnits="userSpaceOnUse" width="400" height="400" patternTransform="rotate(90)">
+            <image href="./media/water (2).svg" width="400" height="400" preserveAspectRatio="xMidYMid slice" />
+        </pattern>
 
-        <section class="river-event left fade-in">
-            <div class="event-icon"><img src="media/Day-1/Ibtida.jpeg" alt="Ibtida"></div>
-            <div class="event-details">
-                <h2>MAIN STAGE</h2>
-                <p>Where the magic of RAABTA begins with Ibtida.</p>
-            </div>
-        </section>
+        <mask id="river-mask" maskUnits="userSpaceOnUse">
+            <path id="mask-path" 
+                  d="M200,0 Q280,380 200,760 Q120,1140 200,1520 Q280,1900 200,2280 Q120,2660 200,3040" 
+                  fill="none" 
+                  stroke="white" 
+                  stroke-width="70" 
+                  stroke-linecap="round"/>
+        </mask>
+    </defs>
 
-        <section class="river-event right fade-in">
-            <div class="event-icon"><img src="media/Day-1/Ghazal Night.jpeg" alt="Ghazal"></div>
-            <div class="event-details">
-                <h2>GHAZAL NIGHT</h2>
-                <p>A serene evening of poetry and classical melodies.</p>
-            </div>
-        </section>
+    <rect width="100%" height="100%" fill="url(#river-pattern)" mask="url(#river-mask)" />
+</svg>
 
-        <section class="river-event left fade-in">
-            <div class="event-icon"><img src="media/Day-1/Bass Warfare.jpeg" alt="Bass"></div>
-            <div class="event-details">
-                <h2>BASS WARFARE</h2>
-                <p>High-energy battles along the banks of the river.</p>
-            </div>
-        </section>
+      <!-- DAY 1 MARKER -->
+      <div class="day-marker fade-in">
+        <div class="day-marker-circle">
+          <span class="day-number">1</span>
+        </div>
+        <div class="day-marker-label">DAY ONE</div>
+      </div>
 
-        <section class="river-event right fade-in">
-            <div class="event-icon"><img src="media/Day-1/Grand Masquerade.jpeg" alt="Masquerade"></div>
-            <div class="event-details">
-                <h2>GRAND FINALE</h2>
-                <p>Closing the festival with the Grand Masquerade.</p>
-            </div>
-        </section>
+      <!-- DAY 1 EVENTS -->
+
+      <section class="river-event right fade-in">
+        <div class="event-icon">
+          <img src="media/Day-1/Ibtida.png" alt="Ibtida" />
+        </div>
+        <div class="event-details">
+          <h2>IBTIDA</h2>
+          <p>Where the magic of RAABTA begins</p>
+        </div>
+      </section>
+
+      <section class="river-event left fade-in">
+        <div class="event-icon">
+          <img src="media/Day-1/sufi-night.jpeg" alt="Sufi Night" />
+        </div>
+        <div class="event-details">
+          <h2>SUFI NIGHT</h2>
+          <p>An enchanting evening of Sufi music and poetry</p>
+        </div>
+      </section>
+
+      <section class="river-event right fade-in">
+        <div class="event-icon">
+          <img src="media/Day-1/sargam.jpeg" alt="Sargam" />
+        </div>
+        <div class="event-details">
+          <h2>SARGAM</h2>
+          <p>A celebration of musical notes and melodies</p>
+        </div>
+      </section>
+
+      <section class="river-event left fade-in">
+        <div class="event-icon">
+          <img src="media/Day-1/noor-ball.png" alt="Noor Ball" />
+        </div>
+        <div class="event-details">
+          <h2>NOOR BALL</h2>
+          <p>An elegant evening of lights and celebration</p>
+        </div>
+      </section>
+
+      <section class="river-event right fade-in">
+        <div class="event-icon">
+          <img src="media/Day-1/chaplin.jpeg" alt="Chaplin" />
+        </div>
+        <div class="event-details">
+          <h2>CHAPLIN</h2>
+          <p>A tribute to silent cinema and comedy</p>
+        </div>
+      </section>
+      <!-- DAY 2 MARKER -->
+      <div class="day-marker fade-in">
+        <div class="day-marker-circle">
+          <span class="day-number">2</span>
+        </div>
+        <div class="day-marker-label">DAY TWO</div>
+      </div>
+
+      <!-- DAY 2 EVENTS -->
+
+      <section class="river-event left fade-in">
+        <div class="event-icon">
+          <img src="media/Day-2/farzi-mushaira.jpeg" alt="Farzi Mushaira" />
+        </div>
+        <div class="event-details">
+          <h2>FARZI MUSHAIRA</h2>
+          <p>A humorous take on traditional poetry recitation</p>
+        </div>
+      </section>
+
+      <section class="river-event right fade-in">
+        <div class="event-icon">
+          <img src="media/Day-2/tark-e-chakra.jpeg" alt="Tark-e-Chakra" />
+        </div>
+        <div class="event-details">
+          <h2>TARK-E-CHAKRA</h2>
+          <p>Breaking free from the cycle</p>
+        </div>
+      </section>
+
+      <section class="river-event left fade-in">
+        <div class="event-icon">
+          <img src="media/Day-2/ruskin.jpeg" alt="Ruskin" />
+        </div>
+        <div class="event-details">
+          <h2>RUSKIN</h2>
+          <p>A literary celebration honoring the art of writing</p>
+        </div>
+      </section>
+
+      <section class="river-event right fade-in">
+        <div class="event-icon">
+          <img src="media/Day-2/tales-on-the-ramp.jpeg" alt="Tales on the Ramp" />
+        </div>
+        <div class="event-details">
+          <h2>TALES ON THE RAMP</h2>
+          <p>Fashion meets storytelling on the runway</p>
+        </div>
+      </section>
     </main>
 
-    
 
-
-
-
-    <!-- Footer -->
+<body>
     <footer id="footer">
-      <div class="footer-row">
-        <div class="footer-col logo-col">
-          <div class="footer-logo-box">
-            <img
-              src="media/lit-logo.png"
-              alt="RAABTA"
-              class="footer-logo-img"
-            />
-            <h2><b>RAABTA 2026</b></h2>
-          </div>
+        <div class="footer-row">
+            <!-- Logo Column -->
+            <div class="footer-col logo-col">
+                <div class="footer-logo-box">
+                    <img src="./media/raabta.png" alt="RAABTA" class="footer-logo-img" />
+                    <h2>RAABTA 2026</h2>
+                </div>
+            </div>
+
+            <!-- Menu Column -->
+            <div class="footer-col menu-col">
+                <h5>Quick Links</h5>
+                <ul class="menu">
+                    <li><a href="./index.html">HOME</a></li>
+                    <li><a href="./main-event.html">EVENTS</a></li>
+                    <li><a href="./sponsors.html">SPONSORS</a></li>
+                    <li><a href="./teams.html">TEAM</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div class="footer-col follow-col">
+                <h5>Follow Us On Instagram</h5>
+                <p>
+                    <a href="https://www.instagram.com/raabtansut?igsh=MWliYW42NWwyaDhueQ==" target="_blank">
+                        <i class="fa-brands fa-instagram"></i> @raabta.nsut
+                    </a>
+                </p>
+                <h5>For Any Queries Contact Us</h5>
+                <p>
+                    <a href="mailto:raabta@college.edu">
+                        <i class="fa-solid fa-envelope"></i> raabta@college.edu
+                    </a>
+                </p>
+            </div>
+
+            <!-- Organization Column -->
+            <div class="footer-col org-col">
+                <img src="./media/nsut logo.png" alt="BSP Logo" class="org-logo" />
+                <h5>Organized by: NSUT DELHI</h5>
+            </div>
         </div>
-        <div class="footer-col menu-col">
-          <ul class="menu">
-            <li><a href="#">SCHEDULE</a></li>
-            <li><a href="#">KEYNOTES</a></li>
-            <li><a href="#">WORKSHOPS</a></li>
-            <li><a href="#">COMPETITIONS</a></li>
-          </ul>
-        </div>
-        <div class="footer-col follow-col">
-          <h5>Follow Us On Instagram</h5>
-          <p>
-            <a href="#"><i class="fa-brands fa-instagram"></i> @raabta.iit</a>
-          </p>
-          <h5>For any queries contact us at:</h5>
-          <p>
-            <a href="mailto:raabta@college.edu"
-              ><i class="fa-solid fa-envelope"></i> raabta@college.edu</a
-            >
-          </p>
-        </div>
-        <div class="footer-col org-col">
-          <img src="media/bsp-logo-new.png" alt="BSP Logo" class="org-logo" />
-          <h5><b>Organized by: BSP</b></h5>
-        </div>
-      </div>
-      <div class="copyright">©RAABTA'26, IIT Delhi</div>
+        
+        <div class="copyright">©2026 RAABTA, NSUT Delhi. All Rights Reserved.</div>
     </footer>
+</body>
+</html>
 
     <script src="./script.js"></script>
     <script>
-        // Scroll Animation Logic
-        const faders = document.querySelectorAll('.fade-in');
-        
-        const appearOptions = {
-            threshold: 0.3,
-            rootMargin: "0px 0px -50px 0px"
-        };
+      // Scroll Animation Logic
+      const faders = document.querySelectorAll(".fade-in");
 
-        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                entry.target.classList.add('appear');
-                appearOnScroll.unobserve(entry.target);
-            });
-        }, appearOptions);
+      const appearOptions = {
+        threshold: 0.3,
+        rootMargin: "0px 0px -50px 0px",
+      };
 
-        faders.forEach(fader => {
-            appearOnScroll.observe(fader);
+      const appearOnScroll = new IntersectionObserver(function (
+        entries,
+        appearOnScroll,
+      ) {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("appear");
+          appearOnScroll.unobserve(entry.target);
         });
+      }, appearOptions);
+
+      faders.forEach((fader) => {
+        appearOnScroll.observe(fader);
+      });
     </script>
   </body>
 </html>

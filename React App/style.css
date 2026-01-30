@@ -25,7 +25,7 @@ body {
     max-width: 100vw;
 }
 
-/* --- Hero & Arch Section (Non-Fixed Header) --- */
+/* --- Hero & Arch Section --- */
 .hero-section {
     position: relative;
     top: 0;
@@ -33,7 +33,6 @@ body {
     width: 100%;
     z-index: 100;
     background-color: var(--bg-color);
-    margin-top: -150px;
 }
 
 .hero-arch-container {
@@ -54,6 +53,7 @@ body {
     height: auto;
     display: block;
     margin: 0;
+    min-height: 100px;
 }
 
 /* Navigation at bottom of arch */
@@ -74,6 +74,7 @@ body {
     color: var(--text-dark);
     transition: color 0.3s ease, transform 0.2s ease;
     letter-spacing: 1px;
+    font-size: larger;
 }
 
 .hero-nav a:hover,
@@ -92,14 +93,17 @@ body {
     width: 100%;
     max-width: 100vw;
     overflow: hidden;
-    margin-top: -100px;
+    margin-top: -380px;
+    position: relative;
+    min-height: 250px;
 }
 
 .main-illustration-panoramic {
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
+    min-height: 200px;
 }
 
 /* --- Content Sections --- */
@@ -108,7 +112,8 @@ body {
     position: relative;
     text-align: center;
     max-width: 100vw;
-    overflow: hidden;
+    overflow: visible;
+    min-height: 400px;
 }
 
 .section-title {
@@ -117,6 +122,7 @@ body {
     justify-content: center;
     gap: 20px;
     margin-bottom: 40px;
+    flex-wrap: wrap;
 }
 
 .section-title h1 {
@@ -126,8 +132,9 @@ body {
 }
 
 .title-motif {
-    width: 40px;
+    width: 150px;
     height: auto;
+    flex-shrink: 0;
 }
 
 .content-wrapper {
@@ -135,9 +142,10 @@ body {
     margin: 0 auto;
     font-size: 1.2rem;
     line-height: 1.8;
+    position: relative;
+    padding-bottom: 180px;
 }
 
-/* Floating Animal Icons */
 .floating-animal {
     position: absolute;
     z-index: 5;
@@ -145,9 +153,9 @@ body {
 
 .cheetah {
     position: absolute;
-    right: 2%;
-    bottom: -120px;
-    width: clamp(300px, 25vw, 450px);
+    right: 5%;
+    bottom: 20px;
+    width: 400px;
     z-index: 5;
 }
 
@@ -205,9 +213,8 @@ body {
 }
 
 .footer-logo-img {
-    width: 80px;
+    width: 280px;
     height: auto;
-    margin-bottom: 10px;
 }
 
 .menu {
@@ -258,23 +265,42 @@ body {
 
 /* --- Responsive Design --- */
 @media screen and (max-width: 991px) {
-    .hero-section {
-        margin-top: -100px;
-    }
-
-    .hero-illustration-wide {
-        margin-top: -60px;
-    }
-
     .hero-nav {
-        font-size: 1.2rem;
-        gap: 30px;
-        padding: 15px 0;
+        font-size: 1.3rem;
+        gap: 35px;
+        padding: 18px 0;
+    }
+    
+    .hero-illustration-wide {
+        margin-top: -150px;
+        min-height: 220px;
+    }
+
+    .main-illustration-panoramic {
+        min-height: 180px;
+    }
+
+    .about-section, .gallery-section {
+        min-height: 380px;
+    }
+
+    .section-title h1 {
+        font-size: 2.5rem;
+    }
+    
+    .title-motif {
+        width: 60px;
+    }
+
+    .content-wrapper {
+        font-size: 1.1rem;
+        padding-bottom: 160px;
     }
 
     .cheetah {
-        width: 200px;
-        bottom: -50px;
+        width: 240px;
+        bottom: 20px;
+        right: 3%;
     }
 
     .fish {
@@ -285,47 +311,53 @@ body {
     .river-footer-art {
         height: 150px;
     }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-nav {
+        font-size: 1.1rem;
+        gap: 25px;
+        padding: 15px 10px;
+        flex-wrap: wrap;
+    }
+    
+    .hero-illustration-wide {
+        margin-top: -100px;
+        min-height: 200px;
+    }
+    
+    .main-illustration-panoramic {
+        min-height: 150px;
+        object-fit: contain;
+    }
+
+    .about-section, .gallery-section {
+        padding: 60px 8%;
+        min-height: 350px;
+    }
+
+    .section-title {
+        gap: 15px;
+    }
 
     .section-title h1 {
         font-size: 2rem;
     }
+    
+    .title-motif {
+        width: 50px;
+    }
 
     .content-wrapper {
         font-size: 1rem;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .hero-section {
-        margin-top: -80px;
-    }
-
-    .hero-illustration-wide {
-        margin-top: -40px;
-    }
-
-    .hero-nav {
-        font-size: 1rem;
-        gap: 20px;
-        flex-wrap: wrap;
-        padding: 10px 0;
-    }
-
-    .section-title h1 {
-        font-size: 1.5rem;
-    }
-
-    .title-motif {
-        width: 30px;
-    }
-
-    .about-section, .gallery-section {
-        padding: 60px 5%;
+        line-height: 1.7;
+        padding-bottom: 140px;
     }
 
     .cheetah {
-        width: 150px;
-        bottom: -30px;
+        width: 200px;
+        bottom: 15px;
+        right: 2%;
     }
 
     .fish {
@@ -334,6 +366,213 @@ body {
     }
 
     .river-footer-art {
-        height: 100px;
+        height: 120px;
     }
+    
+    .footer-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-col {
+        min-width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .hero-arch-container {
+        padding: 0;
+    }
+    
+    .arch-svg {
+        min-height: 80px;
+        max-height: none;
+    }
+    
+    .hero-nav {
+        font-size: 0.95rem;
+        gap: 15px;
+        padding: 12px 5px;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    
+    .hero-nav a {
+        padding: 5px 10px;
+    }
+    
+    .hero-illustration-wide {
+        margin-top: -60px;
+        min-height: 180px;
+    }
+    
+    .main-illustration-panoramic {
+        min-height: 120px;
+        width: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+
+    .about-section, .gallery-section {
+        padding: 40px 5%;
+        min-height: 300px;
+    }
+
+    .section-title {
+        gap: 10px;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .section-title h1 {
+        font-size: 1.6rem;
+    }
+    
+    .title-motif {
+        width: 40px;
+    }
+
+    .content-wrapper {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        padding: 0 10px 120px;
+    }
+
+    .cheetah {
+        width: 150px;
+        bottom: 10px;
+        right: 3%;
+    }
+
+    .fish {
+        display: none;
+    }
+
+    .river-footer-art {
+        height: 80px;
+    }
+    
+    #footer {
+        padding: 40px 5% 15px;
+    }
+    
+    .footer-logo-img {
+        width: 60px;
+    }
+    
+    .org-logo {
+        width: 80px;
+    }
+    
+    .copyright {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .arch-svg {
+        min-height: 70px;
+    }
+    
+    .hero-nav {
+        font-size: 0.85rem;
+        gap: 12px;
+        padding: 10px 5px;
+    }
+    
+    .hero-illustration-wide {
+        margin-top: -40px;
+        min-height: 150px;
+    }
+
+    .main-illustration-panoramic {
+        min-height: 100px;
+    }
+
+    .about-section, .gallery-section {
+        min-height: 280px;
+    }
+
+    .section-title h1 {
+        font-size: 1.4rem;
+    }
+    
+    .title-motif {
+        width: 35px;
+    }
+
+    .content-wrapper {
+        font-size: 0.9rem;
+        padding-bottom: 100px;
+    }
+
+    .cheetah {
+        width: 130px;
+        bottom: 5px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .arch-svg {
+        min-height: 60px;
+    }
+    
+    .hero-nav {
+        font-size: 0.8rem;
+        gap: 10px;
+    }
+    
+    .hero-illustration-wide {
+        margin-top: -30px;
+        min-height: 120px;
+    }
+
+    .main-illustration-panoramic {
+        min-height: 80px;
+    }
+
+    .section-title h1 {
+        font-size: 1.3rem;
+    }
+    
+    .title-motif {
+        width: 30px;
+    }
+
+    .cheetah {
+        width: 110px;
+        bottom: 5px;
+    }
+}
+
+/* Prevent horizontal scroll on all screen sizes */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.hero-section,
+.hero-arch-container,
+.hero-illustration-wide,
+.about-section,
+.gallery-section,
+#footer {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Ensure images are always visible */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.arch-svg,
+.main-illustration-panoramic {
+    width: 100%;
+    height: auto;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
